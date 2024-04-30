@@ -1,0 +1,138 @@
+/* :root {
+  --light: #ffffff;
+  --dark: #000;
+} */
+
+h3 {
+  /* font-family: 'Adam'; */
+  font-size: 2.3rem;
+  font-weight: 300;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 400;
+  transition: 0.3s ease-in;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 0.5rem;
+  display: inline-flex;
+}
+
+.c-link {
+  text-decoration-color: #9B1E2E;
+}
+.c-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #9B1E2E;
+  text-decoration-thickness: 2px; /* หรือค่าที่ต้องการ */
+  transform: scale(1.1); /* หรือค่าที่ต้องการ */
+}
+.c-nav-tool_item a:hover {
+  color: #9B1E2E;
+}
+
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+}
+.flex {
+  display: flex;
+}
+
+.footer_inner {
+  background-color: #f4f3ef !important;
+  padding: 2rem;
+  margin: 3rem 0;
+}
+
+
+.footer {
+  position: relative; /* แก้จาก fixed เป็น relative */
+  z-index: 999; /* กำหนด z-index ให้ต่ำกว่า */
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #0F0D0D;
+  font-family: 'Adam';
+}
+
+.container {
+  /* max-width: 1200px; */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, 400px);
+  border-bottom: 1px solid var(--dark);
+}
+
+input {
+  padding: 0.75rem 0;
+  border: none;
+  background: none;
+  font-weight: 500;
+  transition: border 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  border-radius: 0;
+  width: 100%;
+  font-size: 1.05rem;
+  font-weight: bolder;
+}
+input:focus {
+  outline: none;
+}
+input::placeholder {
+  color: var(--dark);
+}
+
+form {
+  position: relative;
+}
+svg {
+  margin: 0.5rem;
+}
+.c-2 {
+  margin-top: 3.5rem;
+}
+.footer_copyright {
+  display: flex; align-items: center; 
+  font-weight: bold;
+  color: #0F0D0D;
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+ .footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 40vh;
+        
+    }
+
+  .layout {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 2rem;
+  }
+  .w-50 {
+    width:50%;
+  }
+  .w-25 {
+    width: 25%;
+  }
+}
+
+
