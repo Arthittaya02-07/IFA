@@ -575,12 +575,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css
           i18next.changeLanguage(newLanguage, (err, t) => {
             if (err) return console.log('Error loading translation files:', err);
       
-            // อัพเดต textContent 
+            
             elementIds.forEach((elementId) => {
               document.getElementById(elementId).textContent = t(elementId);
             });
       
-            // flagImage และ font 
             const flagImage = document.getElementById('languageFlag');
             if (newLanguage === 'en') {
               flagImage.src = 'images/flags/engflag.png';
