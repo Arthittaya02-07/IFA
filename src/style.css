@@ -884,20 +884,30 @@ transition: all 0.35s;
 /* GALLERY */
 
 /* Artists */
-.imageartists {
-  width: 350px;
-  justify-content: center;
+.imageartists  {
+
+    aspect-ratio: 1;
+    object-fit: cover;
+    width: 60%;
+    max-height: 80svh;
+    display: block;
+    object-position: center top; /* ปรับตำแหน่งของรูปภาพให้อยู่ข้างบน */
+
 }
 .artistname {
   font-style: oblique 90deg;
   font-family: 'Adam';
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   color: #0F0D0D;
-  letter-spacing: 8px;
+  letter-spacing: 7px;
   -webkit-text-stroke: 1px;
   text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.3); 
 }
+/* .artistname p {
+  margin-bottom: -10px; 
+  margin-top: 0px; 
+} */
 .custom-hr {
     display: inline-block; 
     border: none;
@@ -905,12 +915,14 @@ transition: all 0.35s;
     opacity: 1;
     width: calc(30% - 10px); 
   }
-/* .firstname {
+.firstname {
  margin-right: 50px;
+ margin-bottom: -20px; 
 }
 .lastname {
   margin-left: 50px;
-} */
+  margin-top: -20px; 
+}
 
 /* .secondcol {
   overflow-y: auto;
@@ -965,10 +977,10 @@ transition: all 0.35s;
   }
   .firstname {
   padding-top: 30px;
-   margin-left: 50px;
+   /* margin-left: 50px; */
   }
   .lastname {
-    margin-left: 120px;
+    /* margin-left: 120px; */
   }
   
 
