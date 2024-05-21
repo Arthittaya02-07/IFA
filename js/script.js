@@ -41,19 +41,19 @@ document.querySelectorAll('.nav-link').forEach(item => {
 // nav 
 
 // parallax creative
-window.addEventListener('scroll', function() {
-  var scrollTop = window.scrollY;
-  var creativeText = document.querySelector('.creativetext');
-  var windowHeight = window.innerHeight;
-  var documentHeight = document.body.scrollHeight;
-  var creativeHeight = creativeText.offsetHeight;
+// window.addEventListener('scroll', function() {
+//   var scrollTop = window.scrollY;
+//   var creativeText = document.querySelector('.creativetext');
+//   var windowHeight = window.innerHeight;
+//   var documentHeight = document.body.scrollHeight;
+//   var creativeHeight = creativeText.offsetHeight;
 
-  if (scrollTop + windowHeight > documentHeight - creativeHeight) {
-    creativeText.style.bottom = 0;
-  } else {
-    creativeText.style.bottom = '-' + creativeHeight + 'px';
-  }
-});
+//   if (scrollTop + windowHeight > documentHeight - creativeHeight) {
+//     creativeText.style.bottom = 0;
+//   } else {
+//     creativeText.style.bottom = '-' + creativeHeight + 'px';
+//   }
+// });
 
       var $menu = $(".Menu-list"),
         $item = $(".Menu-list-item"),
