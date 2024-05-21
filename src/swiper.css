@@ -1,53 +1,18 @@
-.swiper {
-    width: 100%;
-    height: 100%;
-  }
-
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-
-/* Custom styles for Swiper navigation buttons */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #8a4a38bd !important; /* Change the color of the buttons */
- 
-}
-@media (min-width: 1024px) {
-    .swiper-button-next,
-    .swiper-button-prev {
-      margin-left: 50px !important;
-      margin-right: 50px !important;
-    }
-  }
-  
-/* Optional: Hover effect */
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  color: #8A4A38 !important; /* Change the color on hover */
+/* .swiper {
+  width: 100%;
+  height: 100%;
 }
 
+.swiper-slide {
+  background-position: center;
+  background-size: contain;
+}
 
-.swiper-pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px; /* Adjust margin as needed */
-  }
+.swiper-slide img {
+  height: auto;
+  width: 100%;
+} */
+
   
   .swiper-pagination-bullet {
     width: 20px !important; /* Adjust width as needed */
