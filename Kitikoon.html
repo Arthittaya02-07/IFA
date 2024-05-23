@@ -148,19 +148,42 @@
               </ol>
             </nav>
           </div>
-          <div class="col-md-5 text-end" style="font-family: 'Adam'; font-weight: bolder;  color: #6a6a6a;" >
-            <div class="row " >
-              <div><img src="./images/visitor/graph-2.png" style="width: 3%; height: 70%;"><span style="font-size: 70%;"> Visitors</span></div>
+          <div class="col-md-5 text-end" style="font-weight: bolde; color: #6a6a6a;" >
+            <div class="row d-flex justify-content-end" style="margin-right: -38%;">
+              <div class="col-md-2 text-end">
+                <img src="./images/visitor/graph-2.png" style="width: 30%; height: 50%; margin-bottom: 12px;">
+              </div>
+              <div class="col-md-4 text-start pt-1" style="margin-left: -2%;">
+                <div style="font-size: 70%;" id="visitors" > Visitors</div>
+              </div>
             </div>
-            <div class="row ">
-              <div style="font-size: 65%;">Total : <span id="totalVisitorCount"></span></div>
+            <div class="row d-flex justify-content-end " style="margin-top: -3%; margin-right: -5%;">
+              <div class="row d-flex justify-content-end ">
+                <div class="col-md-3 text-end pe-2">
+                  <div style="font-size: 65%;" id="total">Total :</div>
+                </div>
+                <div class="col-md-1 text-start">
+                  <div id="totalVisitorCount" style="font-size: 65%;"></div>
+                </div>
+              </div>
+              <div class="row d-flex justify-content-end ">
+                <div class="col-md-3 text-end pe-2">
+                  <div style="font-size: 65%;" id="today">Today : </div>
+                </div>
+                <div class="col-md-1 text-start">
+                  <div id="todayVisitorCount" style="font-size: 65%;"></div>
+                </div>
+              </div>
+              <div class="row d-flex justify-content-end ">
+                <div class="col-md-3 text-end pe-2">
+                  <div style="font-size: 65%;" id="yesterday">Yesterday : </div>
+                </div>
+                <div class="col-md-1 text-start">
+                  <div id="yesterdayVisitorCount" style="font-size: 65%;"></div>
+                </div>
+              </div>
             </div>
-            <div class="row">
-              <div style="font-size: 65%;">Today : <span id="todayVisitorCount"></span></div>
-            </div>
-            <div class="row">
-              <div style="font-size: 65%;">Yesterday : <span id="yesterdayVisitorCount"></span></div>
-            </div>
+            
           </div> 
         </div> 
       </div>
@@ -423,7 +446,7 @@
         const elementIds = ['Home', 'Project', 'Detail',
          'Register', 'Announce', 'Creative Works', 'Contact', 
          'Visual Art2', 'Music2', 'Performing Arts2', 'Visual Art3', 
-         'Music3', 'Performing Arts3'];
+         'Music3', 'Performing Arts3','visitors','total','today','yesterday'];
       
         window.onload = function () {
           const storedLanguage = localStorage.getItem('selectedLanguage');
