@@ -734,13 +734,13 @@ max-width: 100%;
 height: auto;
 }
 .caption {
-font-size: 18px;
+font-size: 15px;
 font-weight: 600;
 text-align: center;
 line-height: 2em;
 }
 .item {
-width: 25%;
+width: 18%;
 display: inline-block;
 margin-top: 2rem;
 filter: grayscale(100%);
