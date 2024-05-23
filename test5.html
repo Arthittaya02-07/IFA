@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Counter</title>
+</head>
+<body>
+  <p>Total visitors: <span id="totalVisitorCount"></span></p>
+  <p>Visitors today: <span id="todayVisitorCount"></span></p>
+  <p>Visitors yesterday: <span id="yesterdayVisitorCount"></span></p>
+
+  <script>
+    const today = new Date();
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+
+    const todayStr = formatDate(today);
+    const yesterdayStr = formatDate(yesterday);
+    
+    const currentPage = '/test5.html';
+
+    let totalVisitorCount = 0;
+    let todayVisitorCount = 0;
+    let yesterdayVisitorCount = 0;
+
+    if (localStorage.getItem('totalVisitorCount')) {
+      totalVisitorCount = parseInt(localStorage.getItem('totalVisitorCount'));
+    }
+    if (localStorage.getItem(todayStr)) {
+      todayVisitorCount = parseInt(localStorage.getItem(todayStr));
+    }
+    if (localStorage.getItem(yesterdayStr)) {
+      yesterdayVisitorCount = parseInt(localStorage.getItem(yesterdayStr));
+    }
+    if (localStorage.getItem(currentPage)) {
+      currentPageVisitorCount = parseInt(localStorage.getItem(currentPage));
+    }
+
+    totalVisitorCount++;
+    todayVisitorCount++;
+    localStorage.setItem('totalVisitorCount', totalVisitorCount);
+    localStorage.setItem(todayStr, todayVisitorCount);
+
+    // Update yesterday visitor count if it's the first visit of the day
+    if (localStorage.getItem(yesterdayStr) === null) {
+      localStorage.setItem(yesterdayStr, yesterdayVisitorCount);
+    }
+    currentPageVisitorCount++;
+    localStorage.setItem(currentPage, currentPageVisitorCount);
+
+    document.getElementById('totalVisitorCount').textContent = totalVisitorCount;
+    document.getElementById('todayVisitorCount').textContent = todayVisitorCount;
+    document.getElementById('yesterdayVisitorCount').textContent = yesterdayVisitorCount;
+
+    function formatDate(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+  </script>
+</body>
+</html>

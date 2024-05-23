@@ -136,19 +136,10 @@
    </div>
  </header>
  
-      <!-- <div class="container mt-5 mb-5">
-        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb" class="d-flex align-items-center">
-          <ol class="breadcrumb p-2 d-flex align-items-center justify-content-center"> 
-            <li class="breadcrumb-item"><a href="./index.html"><img src="./images/home.png" style="max-width:24px;" class="img-fluid"></a></li>
-            <li class="breadcrumb-item"><a href="./performance.html">Creative Works</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a>Artists</a></li>
-          </ol>
-        </nav>
-      </div> -->
 
       <div class="container mt-5 mb-5">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-7">
             <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb" class="d-flex align-items-center">
               <ol class="breadcrumb p-2 d-flex align-items-center justify-content-center"> 
                 <li class="breadcrumb-item"><a href="./index.html"><img src="./images/home.png" style="max-width:24px;" class="img-fluid"></a></li>
@@ -157,12 +148,22 @@
               </ol>
             </nav>
           </div>
-          <div class="col-md-6 d-flex justify-content-end">
-            <script type="text/javascript" src="https://www.counters-free.net/count/fjub"></script>
+          <div class="col-md-5 text-end" style="font-family: 'Adam'; font-weight: bolder;  color: #6a6a6a;" >
+            <div class="row " >
+              <div><img src="./images/visitor/graph-2.png" style="width: 3%; height: 70%;"><span style="font-size: 70%;"> Visitors</span></div>
+            </div>
+            <div class="row ">
+              <div style="font-size: 65%;">Total : <span id="totalVisitorCount"></span></div>
+            </div>
+            <div class="row">
+              <div style="font-size: 65%;">Today : <span id="todayVisitorCount"></span></div>
+            </div>
+            <div class="row">
+              <div style="font-size: 65%;">Yesterday : <span id="yesterdayVisitorCount"></span></div>
+            </div>
           </div> 
         </div> 
       </div>
-      
       
       <div class="dataartist mb-5" id="box1_dataartist">
         <div class="container">
@@ -181,17 +182,9 @@
               
             </div>
           </div>
-          <!-- <hr style="opacity: 1; color: #0F0D0D;"> -->
         </div>
       
       </div>
-
-      <!-- <div class="container mb-5 " data-aos="fade-right"  data-aos-duration="2000" id="creativetext2">
-        <div class="col-md-12">
-          <p class="textstyle1">CREATIVE WORK.<hr class="custom-hr"></p>
-          <p class="textstyle2">"Urban Squirrel ShelterT"</p>
-        </div>
-      </div> -->
 
       <div class="artwork p-5" data-aos="fade-up" data-aos-duration="2000">
         <div class="col-md-12">
@@ -458,6 +451,55 @@
               document.getElementById(elementId).textContent = t(elementId);
             });
           });
+      </script>
+      <script>
+        const currentPage = '/Kitikoon.html';
+        let visitorCount = 0;
+        let totalVisitorCount = 0;
+        let todayVisitorCount = 0;
+        let yesterdayVisitorCount = 0;
+    
+        if (localStorage.getItem('totalVisitorCount')) {
+          totalVisitorCount = parseInt(localStorage.getItem('totalVisitorCount'));
+        }
+        if (localStorage.getItem(currentPage)) {
+          visitorCount = parseInt(localStorage.getItem(currentPage));
+        }
+    
+        const today = new Date();
+        const yesterday = new Date(today);
+        yesterday.setDate(yesterday.getDate() - 1);
+    
+        const todayStr = formatDate(today);
+        const yesterdayStr = formatDate(yesterday);
+    
+        if (localStorage.getItem(todayStr)) {
+          todayVisitorCount = parseInt(localStorage.getItem(todayStr));
+        }
+        if (localStorage.getItem(yesterdayStr)) {
+          yesterdayVisitorCount = parseInt(localStorage.getItem(yesterdayStr));
+        }
+    
+        visitorCount++;
+        totalVisitorCount++;
+        todayVisitorCount++;
+        localStorage.setItem('totalVisitorCount', totalVisitorCount);
+        localStorage.setItem(currentPage, visitorCount);
+        localStorage.setItem(todayStr, todayVisitorCount);
+        if (localStorage.getItem(yesterdayStr) === null) {
+          localStorage.setItem(yesterdayStr, yesterdayVisitorCount);
+        }
+    
+        document.getElementById('totalVisitorCount').textContent = totalVisitorCount;
+        document.getElementById('todayVisitorCount').textContent = todayVisitorCount;
+        document.getElementById('yesterdayVisitorCount').textContent = yesterdayVisitorCount;
+    
+        function formatDate(date) {
+          const year = date.getFullYear();
+          const month = String(date.getMonth() + 1).padStart(2, '0');
+          const day = String(date.getDate()).padStart(2, '0');
+          return `${year}-${month}-${day}`;
+        }
       </script>
 
 </body>

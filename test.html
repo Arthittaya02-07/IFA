@@ -1,0 +1,62 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Counter</title>
+  <script>
+    let visitorCount = 0;
+
+    // Check if localStorage has a value for visitorCount
+    if (localStorage.getItem('visitorCount')) {
+      visitorCount = parseInt(localStorage.getItem('visitorCount'));
+    }
+
+    // Increment visitorCount
+    visitorCount++;
+
+    // Update localStorage
+    localStorage.setItem('visitorCount', visitorCount);
+
+    // Display visitorCount
+    document.getElementById('visitorCount').textContent = visitorCount;
+  </script>
+</head>
+<body>
+  <p>You are visitor number: <span id="visitorCount"></span></p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitor Counter</title>
+</head>
+<body>
+  <p>You are visitor number: <span id="visitorCount"></span></p>
+  <script>
+    let visitorCount = 0;
+
+    // Check if localStorage has a value for visitorCount
+    if (localStorage.getItem('visitorCount')) {
+      visitorCount = parseInt(localStorage.getItem('visitorCount'));
+    }
+
+    // Increment visitorCount
+    visitorCount++;
+
+    // Update localStorage
+    localStorage.setItem('visitorCount', visitorCount);
+
+    // Display visitorCount - Ensure the element exists before setting textContent
+    const visitorCountElement = document.getElementById('visitorCount');
+    if (visitorCountElement) {
+      visitorCountElement.textContent = visitorCount;
+    } else {
+      console.error("Element with id 'visitorCount' not found!");
+    }
+  </script>
+</body>
+</html>
